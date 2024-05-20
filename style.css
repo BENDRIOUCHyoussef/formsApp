@@ -1,0 +1,122 @@
+/* Basic Reset */
+body, h1, p, nav, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+header h1 {
+    display: inline;
+}
+
+nav {
+    float: right;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+section {
+    margin-top: 20px;
+}
+
+a:hover {
+    background-color: #004494;
+}
+
+/* Basic Reset */
+body, h1, p, form, input, label, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Use a modern, readable font */
+    background-color: #f7f7f7; /* Light grey background for minimalistic look */
+    color: #333; /* Dark grey color for text for better readability */
+    padding: 20px;
+}
+
+header, form {
+    max-width: 600px;
+    margin: 0 auto; /* Center aligning the form */
+    padding: 20px;
+    background-color: white; /* White background for the form area */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for modern feel */
+    margin-top: 50px; /* Provides some top margin for aesthetics */
+}
+
+h1 {
+    color: #0056b3; /* A blue color for headings to make them stand out */
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+label {
+    display: block; /* Makes the label take the full width */
+    margin: 10px 0 5px; /* Spacing around the label */
+    font-weight: bold; /* Makes the label text bold */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Full width inputs */
+    padding: 8px; /* Padding inside the inputs */
+    margin-bottom: 20px; /* Spacing below each input */
+    border: 1px solid #ccc; /* Subtle border for inputs */
+    border-radius: 4px; /* Slightly rounded borders for inputs */
+}
+
+button {
+    width: 100%; /* Button takes the full width of the form */
+    padding: 10px; /* Padding inside the button */
+    background-color: #0056b3; /* Blue background color for button */
+    color: white; /* White text color for button */
+    border: none; /* No border for button */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Slightly larger text for the button */
+}
+
+button:hover {
+    background-color: #004494; /* Darker blue on hover for button */
+}
+
+p {
+    text-align: center; /* Center-aligns any text inside paragraphs, useful for messages */
+    margin-top: 20px; /* Spacing above paragraphs */
+}
+

@@ -1,0 +1,190 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* ensures full height */
+    font-family: 'Arial', sans-serif;  /* consistent typography */
+    box-sizing: border-box;  /* border-box sizing for all elements */
+}
+
+/* Flexbox Layout for Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-grow: 1;  /* flex container to fill all available space */
+    min-height: 100vh;  /* minimum height of viewport */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;  /* allows scrolling on the sidebar */
+}
+
+.sidebar h1 {
+    margin-bottom: 20px;
+}
+
+.sidebar nav a {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transition: background-color 0.3s;  /* smooth transition for hover effect */
+}
+
+.sidebar nav a:hover {
+    background-color: #495057;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;  /* scrollable content area */
+}
+
+main section h2 {
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;  /* clear indication for clickable links */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;  /* full width sidebar on small screens */
+        height: auto;
+    }
+
+    main {
+        padding: 10px;  /* adjust padding for smaller screens */
+    }
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Enhancements for Create Survey Form */
+main {
+    background-color: #fff; /* Light background for the main content area */
+    border-radius: 8px; /* Rounded corners for the main area */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Ample padding around the content */
+    margin: 20px; /* Margin around the main to avoid sticking to the edges */
+}
+
+label {
+    display: block; /* Ensure labels are block to align inputs neatly */
+    margin: 10px 0 5px; /* Spacing for clarity */
+    color: #333; /* Dark color for text for better readability */
+    font-size: 16px; /* Slightly larger font for easy reading */
+}
+
+input[type="text"],
+input[type="number"],
+textarea, select {
+    width: 100%; /* Full width inputs for alignment */
+    padding: 8px; /* Padding for touch friendliness */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Matched border radius */
+    box-sizing: border-box; /* Box sizing to include padding in width */
+}
+
+button {
+    background-color: #5cb85c; /* A green shade for primary actions */
+    color: white; /* Contrast text color */
+    border: none; /* No border for buttons */
+    padding: 10px 20px; /* Padding for button size */
+    margin-top: 10px; /* Top margin for separation from elements */
+    cursor: pointer; /* Cursor to indicate clickable */
+    border-radius: 4px; /* Rounded corners for buttons */
+    font-size: 16px; /* Larger font size for readability */
+}
+
+button:hover {
+    background-color: #4cae4c; /* Darker green on hover for feedback */
+}
+
+.question-block {
+    background-color: #f9f9f9; /* Very light background for questions */
+    border: 1px solid #ddd; /* Light border for definition */
+    padding: 15px; /* Padding within question blocks */
+    margin-top: 10px; /* Margin top for spacing between questions */
+    border-radius: 5px; /* Slightly rounded corners for soft appearance */
+    position: relative; /* Relative for positioning internal elements */
+}
+
+.remove-button, .remove-option-button {
+    background-color: #d9534f; /* Red color for deletion to indicate danger */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    padding: 5px 10px; /* Smaller padding for smaller buttons */
+    border-radius: 3px; /* Soft rounded corners */
+    position: absolute; /* Absolute position to float on top right */
+    top: 10px; /* Positioning from the top */
+    right: 10px; /* Positioning from the right */
+}
+
+.remove-button:hover, .remove-option-button:hover {
+    background-color: #c9302c; /* Darker red on hover for feedback */
+}
+
+.options-container {
+    margin-top: 10px; /* Margin top for options container */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    main {
+        padding: 15px; /* Less padding on smaller screens */
+    }
+    button {
+        width: 100%; /* Full width buttons on small screens for easier access */
+    }
+}
