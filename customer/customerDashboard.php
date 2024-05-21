@@ -121,8 +121,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="dashboard-container">
         <main>
+            <a href="../logout.php" class="logout-button">Logout</a>
+
+
             <h1><?= htmlspecialchars($survey['title']) ?></h1>
             <p><?= htmlspecialchars($survey['description']) ?></p>
+
 
             <?php if ($user_has_responded) : ?>
                 <p>You have already completed this survey. Thank you for your participation!</p>
