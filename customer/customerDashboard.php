@@ -24,7 +24,6 @@ if (!$survey) {
     exit();
 }
 
-echo $user_id;
 
 $check_sql = "
     SELECT * 
@@ -86,24 +85,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_id = $_SESSION['user_id']; // Replace with actual user ID from session/authentication
     $responses = $_POST['responses'];
 
-    foreach ($responses as $question_id => $response) {
-        if (is_array($response)) {
-            // Multiple Choice responses
-            foreach ($response as $answer_id) {
-                $insert_sql = "INSERT INTO Responses (question_id, user_id, answer_id) VALUES (?, ?, ?, ?)";
+
+    if ($user_has_responded > 0) {
+        echo 'alert("You have Already filled the survey.")';
+    } else {
+
+        foreach ($responses as $question_id => $response) {
+            if (is_array($response)) {
+                // Multiple Choice responses
+                foreach ($response as $answer_id) {
+                    $insert_sql = "INSERT INTO Responses (question_id, user_id, answer_id) VALUES (?, ?, ?, ?)";
+                    $stmt = $db->prepare($insert_sql);
+                    $stmt->bind_param("iii", $question_id, $user_id, $answer_id);
+                    $stmt->execute();
+                }
+            } else {
+                // Text or Rating responses
+                $insert_sql = "INSERT INTO Responses (question_id, user_id, text_response, survey_id) VALUES (?, ?, ?, ?)";
                 $stmt = $db->prepare($insert_sql);
-                $stmt->bind_param("iii", $question_id, $user_id, $answer_id);
+                $stmt->bind_param("iisi", $question_id, $user_id, $response, $survey_id);
                 $stmt->execute();
             }
-        } else {
-            // Text or Rating responses
-            $insert_sql = "INSERT INTO Responses (question_id, user_id, text_response, survey_id) VALUES (?, ?, ?, ?)";
-            $stmt = $db->prepare($insert_sql);
-            $stmt->bind_param("iisi", $question_id, $user_id, $response, $survey_id);
-            $stmt->execute();
         }
     }
 
+    //MOVE TO NEW PAGE WITH SUCCESS PROMPT!!
+
+    header("Location: success.php"); // Redirect to Admin dashboard
+    exit();
     echo "Responses submitted successfully!";
 }
 
