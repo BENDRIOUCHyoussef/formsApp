@@ -47,27 +47,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['question_text'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Add Questions</title>
 </head>
+
 <body>
     <h1>Add Questions to Survey #<?= $survey_id ?></h1>
     <?php if (!empty($error_message)) echo "<p>Error: $error_message</p>"; ?>
     <p>Question Count: <?= $question_count ?>/10</p>
-    <?php if ($question_count < 10): ?>
-    <form method="post">
-        Question Text: <input type="text" name="question_text" required><br>
-        Question Type:
-        <select name="question_type">
-            <option value="Multiple Choice">Multiple Choice</option>
-            <option value="Text">Text</option>
-            <option value="Rating">Rating</option>
-        </select><br>
-        <button type="submit">Add Question</button>
-    </form>
-    <?php else: ?>
-    <p>All 10 questions added. <a href="manage_surveys.php">Return to Manage Surveys</a></p>
+    <?php if ($question_count < 10) : ?>
+        <form method="post">
+            Question Text: <input type="text" name="question_text" required><br>
+            Question Type:
+            <select name="question_type">
+                <option value="Multiple_Choice">Multiple Choice</option>
+                <option value="Text">Text</option>
+                <option value="Rating">Rating</option>
+            </select><br>
+            <button type="submit">Add Question</button>
+        </form>
+    <?php else : ?>
+        <p>All 10 questions added. <a href="manage_surveys.php">Return to Manage Surveys</a></p>
     <?php endif; ?>
 </body>
+
 </html>

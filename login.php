@@ -34,7 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         header("Location: vendor/index.php"); // Redirect to Vendor dashboard
                         exit();
                     case 'Client':
-                        header("Location: index.php"); // Redirect Clients back to the homepage
+                        $param = '1';
+                        header("Location: customer/customerDashboard.php?survey_id=" . urlencode($param)); // Redirect Clients back to the homepage
                         exit();
                     default:
                         echo "Unexpected user role."; // Handle unexpected role
@@ -53,11 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Login</h1>
     <form action="login.php" method="POST">
@@ -70,4 +73,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit">Login</button>
     </form>
 </body>
+
 </html>
